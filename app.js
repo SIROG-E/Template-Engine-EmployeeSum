@@ -16,141 +16,188 @@ const render = require("./lib/htmlRenderer");
 
 var managerQuestions = [
     {
-      type: "input",
-      name: "managerName",
-      message: "What is your name?",
-      //default: false,
-    },
-    {
-      type: "input",
-      name: "managerId",
-      message: "What is your id?",
-      //default: false,
-    },    
-    {
-      type: "input",
-      name: "managerEmail",
-      message: "What's your email?",
-    //   validate: function (value) {
-    //     var pass = value.match(
-    //       /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
-    //     );
-    //     if (pass) {
-    //       return true;
-    //     }
-  
-    //     return 'Please enter a valid phone number';
-    //   },
-    },
-    {
         type: "input",
-        name: "managerOfficeNumber",
-        message: "What is your office number?",
+        name: "name",
+        message: "What is the manager's name?",
         //default: false,
     },
-    // {
-    //     type: "list",
-    //     name: "memberChoice",
-    //     message: "Which type of team member would you like to add?",
-    //     choices: [
-    //         "Engineer",
-    //         "Intern",
-    //         "I don't want to add any more team members"
-    //     ]
-    // }
-    
-   
-  ];
-   
-
-  var engineerQuestions = [
-          // 2.Engineer
     {
         type: "input",
-        name: "engineerName",
+        name: "id",
+        message: "What is the manager's id?",
+        //default: false,
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What's the manager's email?",
+        //   validate: function (value) {
+        //     var pass = value.match(
+        //       /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
+        //     );
+        //     if (pass) {
+        //       return true;
+        //     }
+
+        //     return 'Please enter a valid phone number';
+        //   },
+    },
+    {
+        type: "input",
+        name: "officeNumber",
+        message: "What is the manager's office number?",
+        //default: false,
+    },
+   
+
+
+];
+
+
+var engineerQuestions = [
+    // 2.Engineer
+    {
+        type: "input",
+        name: "name",
         message: "What is your engineer's name?",
         //default: false,
     },
     {
         type: "input",
-        name: "engineerId",
+        name: "id",
         message: "What is your engineer's id?",
         //default: false,
-    },    
-    {
-        type: "input",
-        name: "engineerEmail",
-        message: "What's your engineer's email?",
-      //   validate: function (value) {
-      //     var pass = value.match(
-      //       /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
-      //     );
-      //     if (pass) {
-      //       return true;
-      //     }
-    
-      //     return 'Please enter a valid phone number';
-      //   },
     },
     {
         type: "input",
-        name: "engineerGithub",
+        name: "email",
+        message: "What's your engineer's email?",
+        //   validate: function (value) {
+        //     var pass = value.match(
+        //       /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
+        //     );
+        //     if (pass) {
+        //       return true;
+        //     }
+
+        //     return 'Please enter a valid phone number';
+        //   },
+    },
+    {
+        type: "input",
+        name: "github",
         message: "What is your engineer's Github username?",
         //default: false,
     }
-  ];
+];
 
-var internQuestions =[
+var internQuestions = [
     // 3.Intern
-        
+
     {
         type: "input",
-        name: "internName",
+        name: "name",
         message: "What is your intern's name?",
         //default: false,
     },
     {
         type: "input",
-        name: "internId",
+        name: "id",
         message: "What is your intern's id?",
         //default: false,
-    },    
-    {
-        type: "input",
-        name: "internEmail",
-        message: "What's your intern's email?",
-    //   validate: function (value) {
-    //     var pass = value.match(
-    //       /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
-    //     );
-    //     if (pass) {
-    //       return true;
-    //     }
-
-    //     return 'Please enter a valid phone number';
-    //   },
     },
     {
         type: "input",
-        name: "internSchool",
+        name: "email",
+        message: "What's your intern's email?",
+        //   validate: function (value) {
+        //     var pass = value.match(
+        //       /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
+        //     );
+        //     if (pass) {
+        //       return true;
+        //     }
+
+        //     return 'Please enter a valid phone number';
+        //   },
+    },
+    {
+        type: "input",
+        name: "school",
         message: "What is your intern's school name?",
         //default: false,
     }
 ];
 
-createEmployee(managerQuestions);
+var employeeType = [
+    {
+        type: 'list',
+        name: 'type',
+        message: 'Which team member would you like to add?',
+        choices: ["Engineer", 'Intern', 'Done'],
+    }
+
+];
+
+var employeeList = [];
+
+createEmployee(employeeList, managerQuestions, 'Manager');//.then(_ => console.log('Finished building org. chart!'));
+//console.log(employeeList); //
+
+
 
 //making this function recursive to create different type of employees dynamically..stating with a manager.
-function createEmployee(questions) {
+function createEmployee(employees, questions, type) {
+    if (!questions) {
+        //console.log('Coco: ', employees); //
+        //return new Promise(resolve => { resolve(employees) } ) ;
+        return employees;
+    } else {
+        //ask what do you want to create?
+        inquirer.prompt(questions).then((answers) => {
 
-    inquirer.prompt(questions).then((answers) => {
-        console.log('\nQuestions:');
-        console.log(JSON.stringify(answers, null, '  '));
-      });
+            var employee;
 
+            switch (type) {
+                case "Manager":
+                    employee = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+                    break;
+                case "Engineer":
+                    employee = new Engineer(answers.name, answers.id, answers.email, answers.github);
+                    break;
+                case "Intern":
+                    employee = new Intern(answers.name, answers.id, answers.email, answers.school);
+                    break;
+            }
+
+            employees.push(employee);
+            console.log('Print Employees: ', employees);
+
+            //want to add engineer, intern or none (finish)
+            //console.log('Print Employee: ', employee);
+
+            inquirer.prompt(employeeType).then((employeeAnswer) => {
+                //want to add engineer, intern or none (finish)
+
+                if (employeeAnswer.type !== "Done") {
+                    console.log('\n\nEnter', employeeAnswer.type, 'details below:');
+                }
+                
+
+                if (employeeAnswer.type === "Engineer") {                    
+                    //return new Promise(resolve => { resolve(createEmployee(employees, engineerQuestions, employeeAnswer.type)) });
+                    return createEmployee(employees, engineerQuestions, employeeAnswer.type, employees);
+                } else if (employeeAnswer.type === "Intern") {
+                    //return new Promise(resolve => { resolve(createEmployee(employees, internQuestions, employeeAnswer.type)) });
+                    return createEmployee(employees, internQuestions, employeeAnswer.type, employees);
+                } else {                    
+                    //return new Promise(resolve => { resolve(createEmployee(employees)) });
+                    return createEmployee(employees);
+                }
+            });
+        });
+    }
 }
-
-
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
