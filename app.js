@@ -21,25 +21,29 @@ var managerQuestions = [
         type: "input",
         name: "name",
         message: "What is the manager's name?",
+        validate: input => {
+            const test = input.match(/^[a-zA-Z][a-zA-Z\s]*$/);
+            if (test) return true;
+            else new Error('Please enter letters only!');
+        }
     },
     {
         type: "input",
         name: "id",
         message: "What is the manager's id?",
+        validate: input => {
+            const test = input.match(/^[0-9a-zA-Z]+$/); //in case ID# contains combination of letters and numbers. ie. HR1948
+            if (test) return true;
+            else new Error('Please enter letters and numbers only!');
+        }
     },
     {
         type: "input",
         name: "email",
         message: "What's the manager's email?",
-        validate: function (value) {
-            var pass = value.match(
-                /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            );
-
-            if (pass) {
-                return true;
-            }
-
+        validate: input => {
+            const pass = input.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+            if (pass) {return true;}
             return 'Please enter a valid email address';
         }        
     },
@@ -47,6 +51,11 @@ var managerQuestions = [
         type: "input",
         name: "officeNumber",
         message: "What is the manager's office number?",
+        validate: input => {
+            const pass = input.match(/^[0-9]+$/);
+            if (pass) return true;
+            else new Error('Please enter numbers only!');
+        }
     },
 
 ];
@@ -57,32 +66,42 @@ var engineerQuestions = [
         type: "input",
         name: "name",
         message: "What is your engineer's name?",
+        validate: input => {
+            const pass = input.match(/^[a-zA-Z][a-zA-Z\s]*$/);
+            if (pass) return true;
+            else new Error('Please enter letters only!');
+        }
     },
     {
         type: "input",
         name: "id",
         message: "What is your engineer's id?",
+        validate: input => {
+            const pass = input.match(/^[0-9a-zA-Z]+$/); //in case ID# contains combination of letters and numbers. ie. HR1948
+            if (pass) return true;
+            else new Error('Please enter letters and numbers only!');
+        }
     },
     {
         type: "input",
         name: "email",
         message: "What's your engineer's email?",
-        validate: function (value) {
-            var pass = value.match(
-                /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            );
-
-            if (pass) {
-                return true;
-            }
-
+        validate: input => {
+            const pass = input.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+            if (pass) {return true;}
             return 'Please enter a valid email address';
-        }
+        }  
     },
     {
         type: "input",
         name: "github",
         message: "What is your engineer's Github username?",
+        validate: input => {
+            const pass = input.match(/[^a-zA-Z0-9\-\/]/);
+            if (pass) return true;
+            else new Error('Please enter letters and numbers only!');
+        }
+
     }
 ];
 
@@ -92,31 +111,41 @@ var internQuestions = [
         type: "input",
         name: "name",
         message: "What is your intern's name?",
+        validate: input => {
+            const test = input.match(/^[a-zA-Z][a-zA-Z\s]*$/);
+            if (test) return true;
+            else new Error('Please enter letters only!');
+        }
     },
     {
         type: "input",
         name: "id",
         message: "What is your intern's id?",
+        validate: input => {
+            const test = input.match(/^[0-9a-zA-Z]+$/); //in case ID# contains combination of letters and numbers. ie. HR1948
+            if (test) return true;
+            else new Error('Please enter letters and numbers only!');
+        }
     },
     {
         type: "input",
         name: "email",
         message: "What's your intern's email?",
-        validate: function (value) {
-            var pass = value.match(
-                /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            );
-
-            if (pass) {
-                return true;
-            }
-                return 'Please enter a valid email address';
-        }        
+        validate: input => {
+            const pass = input.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+            if (pass) {return true;}
+            return 'Please enter a valid email address';
+        }       
     },
     {
         type: "input",
         name: "school",
         message: "What is your intern's school name?",
+        validate: input => {
+            const test = input.match(/^[a-zA-Z][a-zA-Z\s]*$/);
+            if (test) return true;
+            else new Error('Please enter letters only!');
+        }
     }
 ];
 
