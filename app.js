@@ -97,7 +97,7 @@ var engineerQuestions = [
         name: "github",
         message: "What is your engineer's Github username?",
         validate: input => {
-            const pass = input.match(/[^a-zA-Z0-9\-\/]/);
+            const pass = input.match(/^[a-zA-Z0-9\-\/]/);
             if (pass) return true;
             else new Error('Please enter letters and numbers only!');
         }
