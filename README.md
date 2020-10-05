@@ -48,13 +48,13 @@
   
 
 ## Preview
-![Template-Engine Preview](assets/MyTeamPreview.png)
+![Template-Engine Preview](Assets/MyTeamPreview.png)
 
-![Template-Engine Walkthrough](assets/Template-Engine-Employee_Walkthrough.gif) 
+![Template-Engine Walkthrough](Assets/Template-Engine-Employee_Walkthrough.gif) 
 
-![npm-Run-Test Preview](assets/npmRunTestPreview.png) 
+![npm-Run-Test Preview](Assets/npmRunTestPreview.png) 
 
-![Running-Node Preview](assets/RunNodePreview.png) 
+![Running-Node Preview](Assets/RunNodePreview.png) 
 
 
 ### Websites
