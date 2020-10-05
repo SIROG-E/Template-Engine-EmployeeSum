@@ -1,4 +1,89 @@
-# Template-Engine-EmployeeSum
+  ## **Unit 10 OOP Homework: Template Engine - Employee Summary**
+
+  [![GitHub license](https://img.shields.io/badge/Made%20by-SIROG--E-ab8c9b?style=flat&logo=github)](http://https://github.com/SIROG-E)  
+  
+  ## Description
+  For this assignment, we were asked to:
+  - Build a Node CLI that takes in information about employees and generates an HTML webpage that displays summaries for each person. 
+  - Ensure that all unit tests pass.
+
+ 
+  ## Table of Contents
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Preview](#preview)
+  * [Website](#website)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Test](#tests)
+  * [Questions](#questions)
+  
+  ## Installation
+
+  Run: 
+
+  ```
+  npm install
+  ```
+
+  ## Usage
+
+  This command-line application generates a README.md from a user's input. The application will be invoked with the following command: 
+
+  ```
+  node index.js
+  ```
+  
+  
+  
+
+- A quality, professional README.md is generated with the title of user's project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions, when the user is prompted for information about his/her application repository. 
+- When the user enters project title, this is displayed as the title of the README file.
+- After the user enters description, installation instructions, usage information, contribution guidelines, and test instructions, then this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests.
+- A badge is added hear the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under, when  the user chooses a license for his/her application from a list of options.
+- GitHub username is added to the section of the README entitled Questions, with a link to my GitHub profile.
+- User's email address is added to the section of the README entitled Questions, with instructions on how to reach user with additional questions.
+- The user is taken to the corresponding section of the README file, when the user clicks on the links in the Table of Contents.
+
+## Preview
+![Good-README-Generator Preview](assets/Preview.png)
+![Good-README-Generator Walkthrough](assets/README-Generator-Walkthrough.gif) 
+
+### Websites
+
+[Good-README-Generator](https://sirog-e.github.io/Good-README-Generator/) 
+
+
+## License
+  This project is licensed by:\
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+
+## Contributing
+  ![GitHub license](https://img.shields.io/badge/Made%20by-SIROG--E-ab8c9b?style=flat&logo=github)
+
+## Test
+  ![](https://img.shields.io/badge/Test-100%25-success?style=flat&logo=node.js) 
+
+## Questions
+  If you have any questions, contact SIROG-E at goris.evelyn@gmail.com
+  
+## Repository
+  - [Project Repo](https://sirog-e.github.io/Good-README-Generator/)
+  
+  ## GitHub
+  ![Image of me](https://avatars3.githubusercontent.com/u/70104520?v=4)
+  - Evelyn Goris
+  - [GitHub Profile](https://github.com/SIROG-E)
+  - <goris.evelyn@gmail.com>
+  
+  
+  
+  
+  
+  
+  
+
 # Unit 10 OOP Homework: Template Engine - Employee Summary
 
 One of the most important aspects of programming is writing code that is readable, reliable, and maintainable. Oftentimes, *how* we design our code is just as important as the code itself. In this homework assignment, your challenge is to build a Node CLI that takes in information about employees and generates an HTML webpage that displays summaries for each person. Since testing is a key piece in making code maintainable, you will also be ensuring that all unit tests pass.
