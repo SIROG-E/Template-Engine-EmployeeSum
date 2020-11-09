@@ -76,7 +76,7 @@
   If you have any questions, contact SIROG-E at goris.evelyn@gmail.com
   
 ## Repository
-  - [Project Repo](https://sirog-e.github.io/Good-README-Generator/)
+  - [Project Repo](https://github.com/SIROG-E/Template-Engine-EmployeeSum)
   
   ## GitHub
   ![Image of me](https://avatars3.githubusercontent.com/u/70104520?v=4)
